@@ -65,7 +65,7 @@ class BankAccount {
             System.out.println("1. Deposit some money");
             System.out.println("2. Withdraw money");
             System.out.println("3. Check your balance");
-    
+            System.out.println("4. Bye");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
 
@@ -84,11 +84,16 @@ class BankAccount {
                     double balance = account.checkBalance();
                     System.out.println("Current balance: $" + balance);
                     break;
+                case 4:
+                    quit = true;
+                    System.out.println("Thank you bye.");
+                    break;
                 default:
                     System.out.println("Invalid choice. Please select a valid option.");
                     break;
             }
         }
+
         scanner.close();
     }
 }
