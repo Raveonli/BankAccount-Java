@@ -5,9 +5,9 @@ class BankAccount {
     private String accountHolderName;
     private double balance;
 
-    public BankAccount(int accountNumber, String accountHolderName, double balance) {
+    public BankAccount(int accountNumber, String accountName, double balance) {
         this.accountNumber = accountNumber;
-        this.accountHolderName = accountHolderName;
+        this.accountHolderName = accountName;
         this.balance = balance;
     }
 
@@ -47,7 +47,7 @@ class BankAccount {
         }
         int accountNumber = scanner.nextInt();
       
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
         System.out.print("Enter account holder name: ");
         String accountHolderName = scanner.nextLine();
         System.out.print("Enter initial balance: $");
@@ -62,10 +62,10 @@ class BankAccount {
         boolean quit = false;
         while (!quit) {
             System.out.println("\nMenu:");
-            System.out.println("1. Deposit money");
+            System.out.println("1. Deposit some money");
             System.out.println("2. Withdraw money");
-            System.out.println("3. Check balance");
-            System.out.println("4. Quit");
+            System.out.println("3. Check your balance");
+    
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
 
@@ -84,16 +84,11 @@ class BankAccount {
                     double balance = account.checkBalance();
                     System.out.println("Current balance: $" + balance);
                     break;
-                case 4:
-                    quit = true;
-                    System.out.println("Thank you for using our bank services.");
-                    break;
                 default:
                     System.out.println("Invalid choice. Please select a valid option.");
                     break;
             }
         }
-
         scanner.close();
     }
 }
